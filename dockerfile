@@ -6,10 +6,12 @@ COPY package*.json ./
 
 RUN npm install
 
+COPY prisma ./prisma
+
 RUN npx prisma generate
 
 COPY . .
 
-EXPOSE 4000
+EXPOSE 5000
 
-CMD ["node", "src/main.js"]
+CMD ["node", "index.js"]
